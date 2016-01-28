@@ -1,0 +1,27 @@
+{
+	"str": "fi",
+	"nav": {
+		"start": "Alku",
+		"info": "Info",
+		"schedule": "Aikataulu",
+		"kth": "KTH?",
+		"signup": "Ilmoittautuminen",
+		"signups": "Ilmoittautuneet"
+	},
+	"signup": {
+		"signup": "Ilmoittautuminen",
+		"helptext": "Käytä alla olevaa lomaketta ilmoittautuaksesi risteilylle. Ilmoittautuminen on ainoastaan fukseille!",
+		"notready": "Ilmoittautuminen on sulkeutunut.",
+		"fname": "Etunimi",
+		"lname": "Sukunimi",
+		"email": "Sähköposti",
+		"phone": "Puhelinnumero",
+		"dob": "Syntymäaika",
+		"nationality": "Kansalaisuus",
+		"guild": "Kilta",
+		"group": "Hytti",
+		"newgroup": "Uuden hytin nimi",
+		"grouppassword": "Hytin salasana",
+		"signups": "Ilmoittautuneet"
+	}
+}

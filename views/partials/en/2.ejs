@@ -1,0 +1,53 @@
+<h1>Henkilötiedot</h1>
+
+<form ng-submit="main.postData()">
+<div class="row">
+    <label class="col-xs-3 col-lg-3"><%= lang.signup.fname %>:</label>
+    <input class="col-xs-9 col-lg-6" name="fname" type="text" ng-model="main.registration.firstname" required/>
+</div>
+<div class="row">
+    <label class="col-xs-3 col-lg-3"><%= lang.signup.lname %>:</label>
+    <input class="col-xs-9 col-lg-6" name="lname" type="text" ng-model="main.registration.lastname" required/>
+</div>
+<div class="row">
+    <label class="col-xs-3 col-lg-3"><%= lang.signup.email %>:</label>
+    <input class="col-xs-9 col-lg-6" name="email" type="email" ng-model="main.registration.email" required/>
+</div>
+<div class="row">
+    <label class="col-xs-3 col-lg-3"><%= lang.signup.phone %>:</label>
+    <input class="col-xs-9 col-lg-6" type="text" name="phone" ng-model="main.registration.phone" required/>
+</div>
+<div class="row">
+    <label class="col-xs-3 col-lg-3"><%= lang.signup.dob %>:</label>
+    <div class="dob">
+        <input name="dobday" type="number" class="dob day" ng-model="main.registration.dobday" placeholder="dd" min="1" max="31" maxlength="2" required/>
+        <input name="dobmonth" type="number" class="dob month" ng-model="main.registration.dobmonth" min="1" max="12" maxlength="2" placeholder="mm" required/>
+        <input name="dobyear" type="number" class="dob year" ng-model="main.registration.dobyear" min="1960" max="2000" maxlength="4" placeholder="yyyy" required/>
+    </div>
+</div>
+<div class="row">
+    <label class="col-xs-3 col-lg-3"><%= lang.signup.nationality %>:</label>
+    <input class="col-xs-9 col-lg-6" name="nationality" type="text" ng-model="main.registration.nationality" required/>
+</div>
+<div class="row">
+    <label class="col-xs-3 col-lg-3"><%= lang.signup.guild %>:</label><select name="guild" ng-model="main.registration.guild" size="1" required>
+        <option>TiK</option>
+        <option>MK</option>
+        <option>AS</option>
+        <option>FK</option>
+        <option>Inkubio</option>
+        <option>TF</option>
+        <option>SIK</option>
+        <option>Athene</option>
+        <option>PJK</option>
+        <option>VK</option>
+        <option>KK</option>
+        <option>Kemma</option>
+    </select>
+</div>
+<div class="row">
+    <input type="submit" value="OK!"/>
+</div>
+</form>
+<span ng-show="main.registrationStatus">{{main.registrationMessage}}</span>
+</div>

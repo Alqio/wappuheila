@@ -1,0 +1,27 @@
+{
+	"str": "en",
+	"nav": {
+		"start": "Start",
+		"info": "Info",
+		"schedule": "Schedule",
+		"kth": "KTH?",
+		"signup": "Sign up",
+		"signups": "Entries"
+	},
+	"signup": {
+		"signup": "Sign up",
+		"helptext": "Use the form below to sign up for the cruise. Sign up is only needed for freshmen!",
+		"notready": "Sign up has closed.",
+		"fname": "First name",
+		"lname": "Last name",
+		"email": "Email",
+		"phone": "Phone number",
+		"dob": "Date of birth",
+		"nationality": "Nationality",
+		"guild": "Guild",
+		"group": "Cabin",
+		"newgroup": "Name of the new cabin",
+		"grouppassword": "Cabin password",
+		"signups": "Signups"
+	}
+}
