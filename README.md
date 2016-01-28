@@ -1,6 +1,6 @@
 # Wappuheila
 
-Wappuheila site using NodeJS & Postgres
+Wappuheila site using NodeJS, Bootstrap & Postgres
 
 ## Running Locally
 
