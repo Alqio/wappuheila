@@ -57,6 +57,11 @@ section {
 	text-shadow: 1px 1px 1px rgba(151,24,64,0.2);
 }
 
+.navinput:disabled ~ a {
+  background: #300300t;
+  color: #eee;
+}
+
 .container-fluid:before {
 	content: '';
 	position: fixed;

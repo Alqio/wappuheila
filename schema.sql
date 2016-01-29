@@ -4,7 +4,7 @@ create table guilds (
 	name VARCHAR NOT NULL UNIQUE
 );
 
-insert into guilds values ('AS'), ('Inkubio'), ('MK'), ('TiK'), ('FK');
+insert into guilds values ('AS'), ('Inkubio'), ('MK'), ('TiK'), ('FK'), ('SIK'), ('AK'), ('Athene'), ('KK'), ('KIK'), ('PJK'), ('IK'), ('Prodeko'), ('VK'), ('TF'), ('PT');
 
 create table registrations (
 	created timestamp default now() not null primary key,

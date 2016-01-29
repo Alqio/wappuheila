@@ -19,9 +19,6 @@
 		"dob": "Syntymäaika",
 		"nationality": "Kansalaisuus",
 		"guild": "Kilta",
-		"group": "Hytti",
-		"newgroup": "Uuden hytin nimi",
-		"grouppassword": "Hytin salasana",
-		"signups": "Ilmoittautuneet"
+		"year": "Fuksivuosi"
 	}
 }

@@ -15,13 +15,8 @@
 		"fname": "First name",
 		"lname": "Last name",
 		"email": "Email",
-		"phone": "Phone number",
-		"dob": "Date of birth",
 		"nationality": "Nationality",
 		"guild": "Guild",
-		"group": "Cabin",
-		"newgroup": "Name of the new cabin",
-		"grouppassword": "Cabin password",
-		"signups": "Signups"
+		"year": "Freshman year"
 	}
 }
