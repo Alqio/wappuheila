@@ -5,52 +5,18 @@
     </head>
     <body ng-app="wappuheila" ng-controller="MainController as main">
       <div class="container-fluid">
-        <input type="radio" class="navinput" name="radio-set" checked="checked" id="w-control-1"/>
-      	<a href="#w-panel-1">Sivu 1</a>
-
-      	<input type="radio" class="navinput" name="radio-set" id="w-control-2" />
-      	<a href="#w-panel-2">Sivu 2</a>
-
-      	<input type="radio" class="navinput" name="radio-set" id="w-control-3" ng-disabled="!page2.$valid"/>
-      	<a href="#w-panel-3">Sivu 3</a>
-
-      	<input type="radio" class="navinput" name="radio-set" id="w-control-4" ng-disabled="!page3.$valid"/>
-      	<a href="#w-panel-4">Sivu 4</a>
-
-      	<input type="radio" class="navinput" name="radio-set" id="w-control-5" ng-disabled="main.isIncomplete(4)"/>
-      	<a href="#w-panel-5">Sivu 5</a>
-
-        <div class="w-scroll">
-          <section id="w-panel-1" class="vertical-center w-panel">
+        <form name="answers" ng-submit="main.postData()">
+          <section class="vertical-center">
             <div class="w-box col-xs-10 col-xs-offset-1 col-md-8 col-md-offset-2 col-lg-6 col-lg-offset-3">
-              <%- include('../partials/'+lang.str+'/1.ejs') %>
+              <%- include('../partials/'+lang.str+'/intro.ejs') %>
             </div>
           </section>
-          <form name="page2">
-            <section id="w-panel-2" class="vertical-center w-panel">
-              <div class="w-box col-xs-10 col-xs-offset-1 col-md-8 col-md-offset-2 col-lg-6 col-lg-offset-3">
-                <%- include('../partials/'+lang.str+'/2.ejs') %>
-              </div>
-            </section>
-          </form>
-          <form name="page3">
-            <section id="w-panel-3" class="vertical-center w-panel">
-              <div class="w-box col-xs-10 col-xs-offset-1 col-md-8 col-md-offset-2 col-lg-6 col-lg-offset-3">
-                <%- include('../partials/'+lang.str+'/3.ejs') %>
-              </div>
-            </section>
-          </form>
-          <section id="w-panel-4" class="vertical-center w-panel">
-            <div class="col-xs-10 col-xs-offset-1 col-md-8 col-md-offset-2 col-lg-6 col-lg-offset-3">
-              <%- include('../partials/'+lang.str+'/4.ejs') %>
+          <section class="vertical-center">
+            <div class="w-box col-xs-10 col-xs-offset-1 col-md-8 col-md-offset-2 col-lg-6 col-lg-offset-3">
+              <%- include('../partials/'+lang.str+'/questions1.ejs') %>
             </div>
           </section>
-          <section id="w-panel-5" class="vertical-center w-panel">
-              <div class="col-xs-10 col-xs-offset-1 col-md-8 col-md-offset-2 col-lg-6 col-lg-offset-3">
-                   <%- include('../partials/'+lang.str+'/5.ejs') %>
-              </div>
-          </section>
-        </div>
+        </form>
       </div>
       <footer>
           (c) MK-TiK-AS-Inkubio-FK
