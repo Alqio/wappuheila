@@ -1,0 +1,25 @@
+<h1>Wappuvastaukset</h1>
+
+<div class="row">
+  <label class="col-xs-3 col-lg-3">Kuinka innolla odotat wappua?</label>
+  <div class="col-xs-8 col-lg-5">
+    <input name="expectation" type="range" min="0" max="10" value="5" ng-model="main.registration.expectation" oninput="this.form.expectationtext.value=this.value" required/>
+  </div>
+  <input class="col-xs-1 col-lg-1" name="expectationtext" type="text" min="0" max="10" value="5" oninput="this.form.expectation.value=this.value" required/>
+</div>
+<div class="row">
+  <label class="col-xs-3 col-lg-3">Kuinka monta yötä sinun wappusi kestää?</label>
+  <div class="col-xs-8 col-lg-5"> <!-- This is needed to override input[type=range]{width: 100%} styling !-->
+    <input name="wappudays" type="range" min="1" max="24" value="12" ng-model="main.registration.wappudays" oninput="this.form.wappudaystext.value=this.value" required/>
+  </div>
+  <input class="col-xs-1 col-lg-1" name="wappudaystext" type="number" min="1" max="24" value="12" oninput="this.form.wappudays.value=this.value" required/>
+</div>
+<div class="row">
+  <label class="col-xs-3 col-lg-3">Kissa vai koira?</label>
+  <select class="col-xs-8 col-lg-5" name="dog_or_cat" ng-model="main.registration.dog_or_cat" required>
+    <option value="1">Koira</option>
+    <option value="2">Kissa</option>
+  </select>
+</div>
+
+<input type="submit" name="ok"/>
