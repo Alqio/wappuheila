@@ -1,29 +1,26 @@
 html, body {
   width: 100vw;
-  height: 100vh;
+  overflow-x: hidden;
   margin: 0;
-  overflow: hidden;
+  padding: 0;
 }
 
 section {
-    font-size: 1.5em;
+    font-size: 1.1em;
     text-align: center;
     position: relative;
-    margin: 0px;
+    margin: 0;
     background-size: cover;
     background-repeat: no-repeat;
-    background-color: #000;
-    background-position-x: 60%;
-    position: relative;
-    color: white;
-    text-align: left;
+    background-color: #DDD;
+    background-position: 60%;
+    color: black;
     vertical-align: middle;
     overflow: auto;
     min-height: 100vh;
 }
 
 .container-fluid {
-  position: absolute;
 	width: 100%;
 	height: 100%;
 	top: 0;
@@ -32,15 +29,8 @@ section {
 	font-family: 'Josefin Slab', 'Myriad Pro', Arial, sans-serif;
 }
 
-.container-fluid > input,
-.container-fluid > a {
-	position: fixed;
-	bottom: 0px;
-	width: 20%;
-	cursor: pointer;
-	font-size: 16px;
-	height: 34px;
-	line-height: 34px;
+label {
+  font-size: 1em;
 }
 
 .container-fluid > input {
@@ -51,90 +41,9 @@ section {
 .container-fluid > a {
 	z-index: 10;
 	font-weight: 700;
-	background: #add8e6;
 	color: #fff;
 	text-align: center;
 	text-shadow: 1px 1px 1px rgba(151,24,64,0.2);
-}
-
-.navinput:disabled ~ a {
-  background: #300300t;
-  color: #eee;
-}
-
-.container-fluid:before {
-	content: '';
-	position: fixed;
-	width: 100%;
-	height: 34px;
-	background: #e23a6e;
-	z-index: 9;
-	bottom: 0;
-}
-
-#w-control-1, #w-control-1 + a {
-	left: 0;
-}
-
-#w-control-2, #w-control-2 + a {
-	left: 20%;
-}
-
-#w-control-3, #w-control-3 + a {
-	left: 40%;
-}
-
-#w-control-4, #w-control-4 + a {
-	left: 60%;
-}
-
-#w-control-5, #w-control-5 + a {
-	left: 80%;
-}
-
-.w-scroll, .w-panel {
-	position: relative;
-	width: 100%;
-	height: 100%;
-}
-
-.w-scroll {
-  top: 0;
-	left: 0;
-	transition: all 0.6s ease-in-out;
-
-	/* Let's enforce some hardware acceleration */
-	-webkit-transform: translate3d(0, 0, 0);
-	-webkit-backface-visibility: hidden;
-}
-
-.w-panel {
-  background: #fff;
-  background-size: cover;
-	overflow: hidden;
-}
-
-.w-box {
-  background-color: rgba(180,230,255, 0.7);
-  color: #000;
-  border-radius: 10px;
-  padding: 2em;
-}
-
-#w-control-1:checked ~ .w-scroll {
-	transform: translateY(0%);
-}
-#w-control-2:checked ~ .w-scroll  {
-	transform: translateY(-100%);
-}
-#w-control-3:checked ~ .w-scroll  {
-	transform: translateY(-200%);
-}
-#w-control-4:checked ~ .w-scroll  {
-	transform: translateY(-300%);
-}
-#w-control-5:checked ~ .w-scroll  {
-	transform: translateY(-400%);
 }
 
 .vertical-center {
@@ -143,42 +52,4 @@ section {
 
   display: flex;
   align-items: center;
-}
-
-#w-panel-1 {
-    font-size: 1.5em;
-    background-image: url("img/1.jpg");
-}
-
-#w-panel-2 {
-    text-align: left;
-    background-image: url("img/2.jpg");
-}
-
-#w-panel-3 {
-  background-image: url("img/parchment_small.jpg");
-  color: #000;
-}
-
-#w-panel-4 {
-    background-image: url("img/kthhd.jpg");
-    text-align: left;
-    background-color: transparent;
-}
-
-#w-panel-5 {
-    background-image: url("img/parchment_small.jpg");
-    background-repeat: repeat-y;
-    text-align: left;
-    color: #000;
-    background-size: cover;
-    height
-}
-
-footer {
-  color: white;
-  font-size: 2em;
-  text-align: center;
-  height: 10em;
-  line-height: 10em;
 }
