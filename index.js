@@ -32,7 +32,7 @@ app.get('/', function(req, res) {
 
 app.get('/fi', function(request, response) {
   var lang = JSON.parse(fs.readFileSync('data/lang_fi.json', 'utf8'));
-  var t1 = Date.parse("2015-10-11T16:00+03:00");
+  var t1 = Date.parse("2016-05-01T00:00+02:00");
   var t2 = Date.now();
   var dif = t1 - t2;
   var timeUntil = dif/1000; //milliseconds away
@@ -52,19 +52,16 @@ app.post("/registration", jsonParser, function(req, res) {
   printCompareResults(req.body);
 });
 
-var answers_meta = JSON.parse(fs.readFileSync('data/answers.json', 'utf8'));
-var testDict = [{'wappudays': 10, 'expectation': 10, 'dog_or_cat': 2}, {'wappudays': 5, 'expectation': 8, 'dog_or_cat': 1}];
+var answers_meta = JSON.parse(fs.readFileSync('data/lang_fi.json', 'utf8'));
 
 // Compare results by absolute difference in answers
 function printCompareResults(req){
   var deferred = when.defer();
-  for(var personkey in testDict){
-    var personScore = 0
-    for(var key in testDict[personkey]){
-      var multiplier = answers_meta['scaled-max'] / answers_meta['fields-max'][key]
-      personScore -= Math.abs(testDict[personkey][key] * multiplier - req[key] * multiplier)
+  for(var field_name in req){
+    if(answers_meta['fields'][field_name] && answers_meta['fields'][field_name]['max']){
+      var scale = answers_meta['scaled-max'] / answers_meta['fields'][field_name]['max']
+      console.log(field_name + ": " + req[field_name] * scale)
     }
-    console.log(personkey, ": ", personScore)
   }
   return deferred.promise;
 }
