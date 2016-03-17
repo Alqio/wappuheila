@@ -1,18 +1,28 @@
 {
 "str": "fi",
-"scaled-max": 10,
+"scaled-max": 30,
 "fields":
 {
-"wappufiilis": {"type": "scale", "min": 0, "max": 10, "label": "Wappufiilis? (1-10)"},
+"wappufiilis": {"type": "scale", "max": 10, "label": "Wappufiilis? (1-10)"},
 "first_thing": {"type": "text", "label": "Mikä asia tulee ensimmäiseksi mieleen Wapusta?"},
-"wappu_lasts": {"type": "scale", "min": 0, "max": 25, "label": "Kuinka monta yötä Wappusi kestää? (1-25)"},
+"wappu_lasts": {"type": "scale", "max": 30, "label": "Kuinka monta yötä Wappusi kestää? (1-30)"},
+"spontaani": {"type": "scale", "max": 10, "label": "Kuinka spontaani olet? (1-10)"},
 "wappuheila_before": {"type": "choice", "choices": ["Kyllä", "Ei"], "label": "Onko sinulla ollut wappuheilaa ennen?"},
 "wappuheila_dream": {"type": "choice", "choices": ["Jallupöllö", "Loopin’ Louie", "Naapurin Pena", "Minä itse tietenkin", "Se on salaisuus ;)"], "label": "Kuka on unelmiesi Wappuheila?"},
+"lempinumero": {"type": "scale", "max": 9, "label": "Mikä on lempinumerosi?"},
 "kossu_or_jallu": {"type": "choice", "choices": ["Kossu", "Jallu"], "label": "Kossu vai jallu?"},
 "wappu_or_juhannus": {"type": "choice", "choices": ["Wappu", "Juhannus"], "label": "Wappu vai juhannus"},
 "kissa_or_koira": {"type": "choice", "choices": ["Kissa", "Koira"], "label": "Kissa vai koira?"},
 "pizza_or_hamburger": {"type": "choice", "choices": ["Pizza", "Hampurilainen"], "label": "Pizza vai hampurilainen?"},
+"kokis_pepsi": {"type": "choice", "choices": ["Coca-Cola zero", "Pepsi Max"], "label": "Coca-Cola Zero vai Pepsi Max?"},
+"metsa_kaupunki": {"type": "choice", "choices": ["Metsä", "Kaupunki"], "label": "Metsä vai kaupunki?"},
+"paalla_alla": {"type": "choice", "choices": ["Päällä", "Alla"], "label": "Päällä vai alla?"},
 "kalia": {"type": "choice", "choices": ["Salitreeni", "Treenikalja"], "label": "Salitreeni vai treenikalja?"},
+"reilaamaan_rantalomalle": {"type": "choice", "choices": ["Reilaamaan", "Rantalomalle"], "label": "Reilaamaan vai rantalomalle?"},
+"ufot": {"type": "choice", "choices": ["Kyllä", "En", "Pimpelipom"], "label": "Uskotko ufoihin?"},
+"yhdyssanat": {"type": "choice", "choices": ["Linnun pönttö kraa kraa", "Palo hälytin pii paa", "Punainen auto vrum vrum"], "label": "Mitä mieltä olet yhdys sana virheistä?"},
+"muistio": {"type": "choice", "choices": ["En", "Tottakai, se on muistio"], "label": "Tiedätkö mikä on memorandumi?"},
+"salkkarit": {"type": "choice", "choices": ["Ismo", "Seppo"], "label": "Kuka on lempihahmosi Salkkareissa?"},
 "toteemi": {"type": "text", "label": "Mikä on toteemieläimesi?"}
 }
 }
