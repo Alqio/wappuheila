@@ -1,9 +1,0 @@
-{
-  "scaled-max": 10,
-  "fields-max":
-  {
-    "wappudays": 10,
-    "expectation": 24,
-    "dog_or_cat": 2
-  }
-}

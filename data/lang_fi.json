@@ -1,24 +1,18 @@
 {
-	"str": "fi",
-	"nav": {
-		"start": "Alku",
-		"info": "Info",
-		"schedule": "Aikataulu",
-		"kth": "KTH?",
-		"signup": "Ilmoittautuminen",
-		"signups": "Ilmoittautuneet"
-	},
-	"signup": {
-		"signup": "Ilmoittautuminen",
-		"helptext": "Käytä alla olevaa lomaketta ilmoittautuaksesi risteilylle. Ilmoittautuminen on ainoastaan fukseille!",
-		"notready": "Ilmoittautuminen on sulkeutunut.",
-		"fname": "Etunimi",
-		"lname": "Sukunimi",
-		"email": "Sähköposti",
-		"phone": "Puhelinnumero",
-		"dob": "Syntymäaika",
-		"nationality": "Kansalaisuus",
-		"guild": "Kilta",
-		"year": "Fuksivuosi"
-	}
+"str": "fi",
+"scaled-max": 10,
+"fields":
+{
+"wappufiilis": {"type": "scale", "min": 0, "max": 10, "label": "Wappufiilis? (1-10)"},
+"first_thing": {"type": "text", "label": "Mikä asia tulee ensimmäiseksi mieleen Wapusta?"},
+"wappu_lasts": {"type": "scale", "min": 0, "max": 25, "label": "Kuinka monta yötä Wappusi kestää? (1-25)"},
+"wappuheila_before": {"type": "choice", "choices": ["Kyllä", "Ei"], "label": "Onko sinulla ollut wappuheilaa ennen?"},
+"wappuheila_dream": {"type": "choice", "choices": ["Jallupöllö", "Loopin’ Louie", "Naapurin Pena", "Minä itse tietenkin", "Se on salaisuus ;)"], "label": "Kuka on unelmiesi Wappuheila?"},
+"kossu_or_jallu": {"type": "choice", "choices": ["Kossu", "Jallu"], "label": "Kossu vai jallu?"},
+"wappu_or_juhannus": {"type": "choice", "choices": ["Wappu", "Juhannus"], "label": "Wappu vai juhannus"},
+"kissa_or_koira": {"type": "choice", "choices": ["Kissa", "Koira"], "label": "Kissa vai koira?"},
+"pizza_or_hamburger": {"type": "choice", "choices": ["Pizza", "Hampurilainen"], "label": "Pizza vai hampurilainen?"},
+"kalia": {"type": "choice", "choices": ["Salitreeni", "Treenikalja"], "label": "Salitreeni vai treenikalja?"},
+"toteemi": {"type": "text", "label": "Mikä on toteemieläimesi?"}
+}
 }
