@@ -9,6 +9,7 @@ angular.module('wappuheila', [])
 
     this.postData = function(){
         console.log("Trying to sign up\n");
+        self.registration.admin = true;
         
         $http.post("/registration", self.registration)
             .then(function(response){
