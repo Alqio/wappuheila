@@ -30,12 +30,12 @@
   "lehtimyyja": {"type": "choice", "choices": ["Kyllä", "En", "Sit' on koettanut moni soittaja", "*Tuut tuut tuut*"], "label": "Oletko koskaan ostanut mitään puhelinmyyjältä"},
   "gt": {"type": "choice", "choices": ["Gin Tonicin", "Gin Tonicin", "Gin Tonicin"], "label": "Tahtoisin…"},
   "viimeksi": {"type": "choice", "choices": ["Tänään", "Huomenna"], "label": "Milloin viimeksi tymästi"},
-  "toteemi": {"type": "text", "label": "Mikä on toteemieläimesi?"}
+  "toteemi": {"type": "text", "label": "Mikä on toteemieläimesi?"},
+  "arvonta": {"type": "choice", "choices": ["Kyllä", "En"], "label": "Osallistutko arvontaan? Arvontaan osallistuvien tulee varautua pitämään sunnuntai-ilta 17.4. vapaana."}
 },
 "signup": {
-  "arvonta": {"type": "choice", "choices": ["Kyllä", "En"], "label": "Osallistutko arvontaan? Arvontaan osallistuvien tulee varautua pitämään sunnuntai-ilta 17.4. vapaana."},
-  "nimi": {"type": "text", "label": "Nimesi? (Vain mikäli osallistuit arvontaan.)"},
-  "email": {"type": "text", "label": "Sähköpostiosoitteesi? (Vain mikäli osallistuit arvontaan.)"},
-  "ruoka": {"type": "text", "label": "Ruoka-aineallergiat? (Vain mikäli osallistuit arvontaan.)"},
+  "nimi": {"type": "text", "label": "Nimesi?"},
+  "email": {"type": "text", "label": "Sähköpostiosoitteesi?"},
+  "ruoka": {"type": "text", "label": "Ruoka-aineallergiat?"},
   "kilta": {"type": "select", "options": ["AS", "Inkubio", "MK", "TiK", "FK", "SIK", "AK", "Athene", "KK", "KIK", "PJK", "IK", "Prodeko", "VK", "TF", "PT", "KY", "ARTS", "Muu/Other"], "label": "Kilta/Yhdistys/Osakunta:"}}
 }

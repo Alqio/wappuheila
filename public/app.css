@@ -6,15 +6,13 @@ html, body {
   background-color: #fff;
   text-align: center;
   color: #090909;
+	font-family: 'Josefin Slab', 'Myriad Pro', Arial, sans-serif;
 }
 
 section {
   background-color: #eee;
 }
 
-h1 {
-  font-family: 'Luckiest Guy', cursive;
-}
 
 .question {
   padding: 1em 0 1em 0;
@@ -31,7 +29,10 @@ h1 {
 	top: 0;
 	left: 0;
   padding: 0;
-	font-family: 'Josefin Slab', 'Myriad Pro', Arial, sans-serif;
+}
+
+h1 {
+  font-family: 'Luckiest Guy', cursive;  
 }
 
 label {
