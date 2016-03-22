@@ -3,21 +3,26 @@ html, body {
   overflow-x: hidden;
   margin: 0;
   padding: 0;
+  background-color: #fff;
+  text-align: center;
+  color: #090909;
 }
 
 section {
-    font-size: 1.1em;
-    text-align: left;
-    position: relative;
-    margin: 0;
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-color: #FFF;
-    background-position: 60%;
-    color: black;
-    vertical-align: middle;
-    overflow: auto;
-    min-height: 100vh;
+  background-color: #eee;
+}
+
+h1 {
+  font-family: 'Luckiest Guy', cursive;
+}
+
+.question {
+  padding: 1em 0 1em 0;
+  background-color: #EAEAEA;
+}
+
+.question:nth-child(2n) {
+  background-color: #FFFFFF;
 }
 
 .container-fluid {
@@ -36,14 +41,6 @@ label {
 .container-fluid > input {
 	opacity: 0;
 	z-index: 1000;
-}
-
-.container-fluid > a {
-	z-index: 10;
-	font-weight: 700;
-	color: #fff;
-	text-align: center;
-	text-shadow: 1px 1px 1px rgba(151,24,64,0.2);
 }
 
 .vertical-center {
