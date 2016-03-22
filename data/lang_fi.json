@@ -2,10 +2,10 @@
 "str": "fi",
 "scaled-max": 10,
 "fields": {
-  "wappufiilis": {"type": "scale", "max": 10, "label": "Wappufiilis? (1-10"},
+  "wappufiilis": {"type": "scale", "max": 10, "label": "Wappufiilis? (1-10)"},
   "first_thing": {"type": "text", "label": "Mikä asia tulee ensimmäiseksi mieleen Wapusta?"},
-  "wappu_lasts": {"type": "scale", "max": 30, "label": "Kuinka monta yötä Wappusi kestää? (1-30"},
-  "spontaani": {"type": "scale", "max": 10, "label": "Kuinka spontaani olet? (1-10"},
+  "wappu_lasts": {"type": "scale", "max": 30, "label": "Kuinka monta yötä Wappusi kestää? (1-30)"},
+  "spontaani": {"type": "scale", "max": 10, "label": "Kuinka spontaani olet? (1-10)"},
   "wappuheila_before": {"type": "choice", "choices": ["Kyllä", "Ei"], "label": "Onko sinulla ollut Wappuheilaa ennen?"},
   "wappuheila_dream": {"type": "choice", "choices": ["Jallupöllö", "Loopin’ Louie", "Naapurin Pena"], "label": "Kuka on unelmiesi Wappuheila?"},
   "lempinumero": {"type": "scale", "max": 9, "label": "Mikä on lempinumerosi?"},
@@ -14,7 +14,7 @@
   "kissa_or_koira": {"type": "choice", "choices": ["Kissa", "Koira"], "label": "Kissa vai koira?"},
   "pizza_or_hamburger": {"type": "choice", "choices": ["Pizza", "Hampurilainen"], "label": "Pizza vai hampurilainen?"},
   "kokis_pepsi": {"type": "choice", "choices": ["Coca-Cola Zero", "Pepsi Max"], "label": "Coca-Cola Zero vai Pepsi Max?"},
-  "metsä_kaupunki": {"type": "choice", "choices": ["Metsä", "Kaupunki"], "label": "Metsä vai kaupunki?"},
+  "metsa_kaupunki": {"type": "choice", "choices": ["Metsä", "Kaupunki"], "label": "Metsä vai kaupunki?"},
   "paalla_alla": {"type": "choice", "choices": ["Päällä", "Alla"], "label": "Päällä vai alla?"},
   "kalia": {"type": "choice", "choices": ["Salitreeni", "Treenikalja"], "label": "Salitreeni vai treenikalja?"},
   "kaljatolkki": {"type": "choice", "choices": ["Kaljatölkki", "Tölkkikalja"], "label": "Kaljatölkki vai tölkkikalja?"},
@@ -34,8 +34,8 @@
 },
 "signup": {
   "arvonta": {"type": "choice", "choices": ["Kyllä", "En"], "label": "Osallistutko arvontaan? Arvontaan osallistuvien tulee varautua pitämään sunnuntai-ilta 17.4. vapaana."},
-  "nimi": {"type": "text", "label": "Nimesi? (Vain mikäli osallistuit arvontaan."},
-  "email": {"type": "text", "label": "Sähköpostiosoitteesi? (Vain mikäli osallistuit arvontaan."},
-  "ruoka": {"type": "text", "label": "Ruoka-aineallergiat? (Vain mikäli osallistuit arvontaan."},
-  "kilta": {"type": "select", "options": ["AS", "Inkubio", "MK", "TiK", "FK", "SIK", "AK", "Athene", "KK", "KIK", "PJK", "IK", "Prodeko", "VK", "TF", "PT", "KY", "ARTS", "Muu/Other"], "label": "Kilta/Yhdistys/Osakunta?"}}
+  "nimi": {"type": "text", "label": "Nimesi? (Vain mikäli osallistuit arvontaan.)"},
+  "email": {"type": "text", "label": "Sähköpostiosoitteesi? (Vain mikäli osallistuit arvontaan.)"},
+  "ruoka": {"type": "text", "label": "Ruoka-aineallergiat? (Vain mikäli osallistuit arvontaan.)"},
+  "kilta": {"type": "select", "options": ["AS", "Inkubio", "MK", "TiK", "FK", "SIK", "AK", "Athene", "KK", "KIK", "PJK", "IK", "Prodeko", "VK", "TF", "PT", "KY", "ARTS", "Muu/Other"], "label": "Kilta/Yhdistys/Osakunta:"}}
 }
