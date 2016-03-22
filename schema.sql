@@ -14,4 +14,4 @@ create table registrations (
 	association text references associations(name)
 );
 
-insert into associations values ('AS'), ('Inkubio'), ('MK'), ('TiK'), ('FK'), ('SIK'), ('AK'), ('Athene'), ('KK'), ('KIK'), ('PJK'), ('IK'), ('Prodeko'), ('VK'), ('TF'), ('PT'), ('KY'), ('ARTS');
+insert into associations values ('AS'), ('Inkubio'), ('MK'), ('TiK'), ('FK'), ('SIK'), ('AK'), ('Athene'), ('KK'), ('KIK'), ('PJK'), ('IK'), ('Prodeko'), ('VK'), ('TF'), ('PT'), ('KY'), ('ARTS'), ('Muu/Other');
