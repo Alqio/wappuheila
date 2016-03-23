@@ -31,7 +31,7 @@
   "gt": {"type": "choice", "choices": ["Gin Tonicin", "Gin Tonicin", "Gin Tonicin"], "label": "Tahtoisin…"},
   "viimeksi": {"type": "choice", "choices": ["Tänään", "Huomenna"], "label": "Milloin viimeksi tymästi"},
   "toteemi": {"type": "text", "label": "Mikä on toteemieläimesi?"},
-  "arvonta": {"type": "choice", "choices": ["Kyllä", "En"], "label": "Osallistutko arvontaan? Arvontaan osallistuvien tulee varautua pitämään sunnuntai-ilta 17.4. vapaana."}
+  "arvonta": {"type": "choice", "choices": ["Kyllä", "En"], "label": "Haluatko osallistua wappuheilasitseille? Sitseille osallistuvien tulee varautua pitämään sunnuntai-ilta 17.4. vapaana. Wappuheilasitseille pääsevät arvotaan."}
 },
 "signup": {
   "nimi": {"type": "text", "label": "Nimesi?"},
