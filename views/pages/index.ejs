@@ -8,12 +8,12 @@
         <div class="background">&nbsp;</div>
         <form name="answers" ng-submit="main.postData()">
           <section class="vertical-center">
-            <div class="w-box col-xs-10 col-xs-offset-1 col-md-8 col-md-offset-2 col-lg-6 col-lg-offset-3">
+            <div class="w-box col-xs-12 col-md-8 col-md-offset-2 col-lg-6 col-lg-offset-3">
               <%- include('../partials/'+lang.str+'/intro.ejs') %>
             </div>
           </section>
           <section>
-            <div class="w-box col-xs-10 col-xs-offset-1 col-md-8 col-md-offset-2 col-lg-6 col-lg-offset-3">
+            <div class="w-box col-xs-12 col-md-8 col-md-offset-2 col-lg-6 col-lg-offset-3">
               <%- include('../partials/'+lang.str+'/questions.ejs') %>
               <div ng-show="main.registration.arvonta==0">
                 <%- include('../partials/'+lang.str+'/signup.ejs') %>
