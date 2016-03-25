@@ -14,25 +14,17 @@ html, body {
 section {
   min-height: 100vh;
   margin-bottom: 2em;
-  transition: min-height 99999s; /* workaround for view jumping when the urlbar appears on mobile */
+  transition: min-height 0.5s; /* workaround for view jumping when the urlbar appears on mobile */
 }
 
 .background {
   position: fixed;
   width: 100vw;
   height: 100vh;
-  /* Firefox */
-  height: -moz-calc(100vh + 100px);
-  /* WebKit */
-  height: -webkit-calc(100vh + 100px);
-  /* Opera */
-  height: -o-calc(100vh + 100px);
-  /* Standard */
-  height: calc(100vh + 100px);
   z-index: 0;
-  background-image: url("img/1.jpg");
+  background-image: url("img/3.jpg");
   background-size: cover;	
-  transition: height 99999s; /* workaround for view jumping when the urlbar appears on mobile */
+  transition: height 0.5s; /* workaround for view jumping when the urlbar appears on mobile */
 }
 
 .w-box {
@@ -83,10 +75,6 @@ input[type=range] {
   margin: 18px 0;
   width: 100%;
 }
-/*
-input[type=range]:focus {
-  outline: none;
-}*/
 
 input[type=range]::-webkit-slider-runnable-track {
   width: 100%;
@@ -182,4 +170,11 @@ input[type=range]:focus::-ms-fill-lower {
 }
 input[type=range]:focus::-ms-fill-upper {
   background: #02AAFF;
+}
+
+input[type=submit] {
+  color: #000;
+  padding: 1em;
+  border-radius: 1em;
+  border-color: #000;
 }
