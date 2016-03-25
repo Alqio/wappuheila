@@ -1,5 +1,5 @@
 html, body {
-  width: 100vw;
+  width: 100%;
   overflow-x: hidden;
   margin: 0;
   padding: 0;
@@ -20,7 +20,15 @@ section {
 .background {
   position: fixed;
   width: 100vw;
-  height: -webkit-calc(100vh+100px);
+  height: 100vh;
+  /* Firefox */
+  height: -moz-calc(100vh + 100px);
+  /* WebKit */
+  height: -webkit-calc(100vh + 100px);
+  /* Opera */
+  height: -o-calc(100vh + 100px);
+  /* Standard */
+  height: calc(100vh + 100px);
   z-index: 0;
   background-image: url("img/1.jpg");
   background-size: cover;	
