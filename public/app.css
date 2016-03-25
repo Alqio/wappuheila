@@ -20,10 +20,11 @@ section {
 .background {
   position: fixed;
   width: 100vw;
-  height: 100vh;
+  height: 101vh;
   z-index: 0;
   background-image: url("img/1.jpg");
   background-size: cover;	
+  transition: height 99999s; /* workaround for view jumping when the urlbar appears on mobile */
 }
 
 .w-box {
