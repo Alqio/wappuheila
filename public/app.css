@@ -3,10 +3,12 @@ html, body {
   overflow-x: hidden;
   margin: 0;
   padding: 0;
-  background-color: #fff;
   text-align: center;
-  color: #090909;
-	font-family: 'Josefin Slab', 'Myriad Pro', Arial, sans-serif;
+  color: #EEEEEE;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: bolder;
+  font-size: 1.0em;
+  z-index: 2;
 }
 
 section {
@@ -14,13 +16,33 @@ section {
 }
 
 
+.background {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  z-index: 0;
+  background-image: url("img/1.jpg");
+  background-size: cover;
+}
+
+.w-box {
+  background-color: #3333BB;
+  background-color: rgba(2, 175, 255, 0.9);
+  padding-top: 2em;
+  padding-bottom: 2em;
+  border-radius: 2em;
+}
+
 .question {
+  color: #090909;
   padding: 1em 0 1em 0;
   background-color: #EAEAEA;
+  background-color: rgba(245, 245, 245, 0.8);
 }
 
 .question:nth-child(2n) {
   background-color: #FFFFFF;
+  background-color: rgba(255, 255, 255, 0.8);
 }
 
 .container-fluid {
@@ -32,16 +54,9 @@ section {
 }
 
 h1 {
-  font-family: 'Luckiest Guy', cursive;  
-}
-
-label {
-  font-size: 1em;
-}
-
-.container-fluid > input {
-	opacity: 0;
-	z-index: 1000;
+  font-family: 'Luckiest Guy', cursive;
+  color: #090909;
+  padding-bottom: 1em;  
 }
 
 .vertical-center {
