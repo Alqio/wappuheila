@@ -15,10 +15,11 @@
           <section>
             <div class="w-box col-xs-12 col-md-8 col-md-offset-2 col-lg-6 col-lg-offset-3">
               <%- include('../partials/'+lang.str+'/questions.ejs') %>
-              <div ng-show="main.registration.arvonta==0">
+              <div ng-show="main.registration.arvonta==1">
                 <%- include('../partials/'+lang.str+'/signup.ejs') %>
               </div>
               <br>
+              <label class="check" for="arvonta"><input type="checkbox" id="arvonta" name="arvonta" value="1" ng-model="main.registration.arvonta"/> Osallistun arvontaan!</label>
               <input type="submit" name="ok" value="Matchaa mut!"/>
             </div>
           </section>

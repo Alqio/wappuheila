@@ -7,13 +7,13 @@
     <div class="col-xs-12 col-md-6 col-lg-6">
       <% if(lang.fields[key]["type"] === "scale"){ %>
         <div class="col-xs-8 col-lg-10">
-          <input name="<%= key %>" type="range" min="<%= lang.fields[key]['min']%>" max="<%= lang.fields[key]['max']%>" value="<%= Math.floor(lang.fields[key]['max'] / 2) %>" ng-model="main.registration.<%= key %>" oninput="this.form.<%= key %>text.value=this.value" required/>
+          <input name="<%= key %>" type="range" min="<%= lang.fields[key]['min']%>" max="<%= lang.fields[key]['max']%>" step="<%= lang.fields[key]['step'] || 1 %>" value="<%= Math.floor(lang.fields[key]['max'] / 2) %>" ng-model="main.registration.<%= key %>" oninput="this.form.<%= key %>text.value=this.value" required/>
         </div>
-        <input class="col-xs-4 col-lg-2" name="<%= key %>text" type="text" value="<%= Math.floor(lang.fields[key]['max'] / 2)%>" oninput="this.form.<%= key %>.value=this.value" required/>
+        <input class="col-xs-4 col-lg-2" name="<%= key %>text" type="text" value="<%= Math.floor(lang.fields[key]['max'] / 2) %>" oninput="this.form.<%= key %>.value=this.value" required/>
       <% } %>
       <% if(lang.fields[key]["type"] === "choice"){ %>
           <% for (var okey in lang.fields[key]["choices"]) {%>
-            <input type="radio" name="<%= key %>" value="<%= okey %>" ng-model="main.registration.<%= key %>" required/> <%= lang.fields[key]['choices'][okey] %><br/>
+            <label for="radio<%= key %>_<%= okey %>"><input type="radio" name="<%= key %>" id="radio<%= key %>_<%= okey %>" value="<%= okey %>" ng-model="main.registration.<%= key %>" required/> <%= lang.fields[key]['choices'][okey] %></label><br/>
           <% } %>
       <% } %>
       <% if(lang.fields[key]["type"] === "text"){ %>

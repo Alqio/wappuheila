@@ -38,12 +38,12 @@ section {
 .question {
   color: #090909;
   padding: 1em 0 1em 0;
-  background-color: #EAEAEA;
+  background-color: #FFFFFF;
   background-color: rgba(245, 245, 245, 0.8);
 }
 
 .question:nth-child(2n) {
-  background-color: #FFFFFF;
+  background-color: #EAEAEA;
   background-color: rgba(255, 255, 255, 0.8);
 }
 
@@ -57,7 +57,7 @@ section {
 
 h1 {
   font-family: 'Luckiest Guy', cursive;
-  color: #090909;
+  color: #FFCC00;
   padding-bottom: 1em;  
 }
 
@@ -172,9 +172,12 @@ input[type=range]:focus::-ms-fill-upper {
   background: #02AAFF;
 }
 
-input[type=submit] {
+input[type=submit], .check {
   color: #000;
   padding: 1em;
+  background-color: #FFF;
   border-radius: 1em;
   border-color: #000;
+  border-width: 2px;
+  border-style: solid;
 }

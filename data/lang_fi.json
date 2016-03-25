@@ -2,7 +2,7 @@
 "str": "fi",
 "scaled-max": 10,
 "fields": {
-  "wappufiilis": {"type": "scale", "max": 10, "label": "Wappufiilis? (1-10)"},
+  "wappufiilis": {"type": "scale", "max": 1, "label": "Wappufiilis? (0-1)", "step": "0.1"},
   "first_thing": {"type": "text", "label": "Mikä asia tulee ensimmäiseksi mieleen Wapusta?"},
   "wappu_lasts": {"type": "scale", "max": 30, "label": "Kuinka monta yötä Wappusi kestää? (1-30)"},
   "spontaani": {"type": "scale", "max": 10, "label": "Kuinka spontaani olet? (1-10)"},
@@ -30,8 +30,7 @@
   "lehtimyyja": {"type": "choice", "choices": ["Kyllä", "En", "Sit' on koettanut moni soittaja", "*Tuut tuut tuut*"], "label": "Oletko koskaan ostanut mitään puhelinmyyjältä"},
   "gt": {"type": "choice", "choices": ["Gin Tonicin", "Gin Tonicin", "Gin Tonicin"], "label": "Tahtoisin…"},
   "viimeksi": {"type": "choice", "choices": ["Tänään", "Huomenna"], "label": "Milloin viimeksi tymästi"},
-  "toteemi": {"type": "text", "label": "Mikä on toteemieläimesi?"},
-  "arvonta": {"type": "choice", "choices": ["Kyllä", "En"], "label": "Haluatko osallistua wappuheilasitseille? Sitseille osallistuvien tulee varautua pitämään sunnuntai-ilta 17.4. vapaana. Wappuheilasitseille pääsevät arvotaan."}
+  "toteemi": {"type": "text", "label": "Mikä on toteemieläimesi?"}
 },
 "signup": {
   "nimi": {"type": "text", "label": "Nimesi?"},
