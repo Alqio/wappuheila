@@ -13,8 +13,9 @@ html, body {
 
 section {
   min-height: 100vh;
+  margin-bottom: 2em;
+  transition: min-height 99999s; /* workaround for view jumping when the urlbar appears on mobile */
 }
-
 
 .background {
   position: fixed;
@@ -22,11 +23,11 @@ section {
   height: 100vh;
   z-index: 0;
   background-image: url("img/1.jpg");
-  background-size: cover;
+  background-size: cover;	
 }
 
 .w-box {
-  background-color: #3333BB;
+  background-color: #02AAFF;
   background-color: rgba(2, 175, 255, 0.9);
   padding-top: 2em;
   padding-bottom: 2em;
