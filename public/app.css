@@ -20,7 +20,7 @@ section {
 .background {
   position: fixed;
   width: 100vw;
-  height: 101vh;
+  height: -webkit-calc(100vh+100px);
   z-index: 0;
   background-image: url("img/1.jpg");
   background-size: cover;	
