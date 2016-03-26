@@ -13,7 +13,7 @@ html, body {
 
 section {
   min-height: 100vh;
-  margin-bottom: 2em;
+  margin-bottom: 5em;
   transition: min-height 0.5s; /* workaround for view jumping when the urlbar appears on mobile */
 }
 
@@ -28,8 +28,8 @@ section {
 }
 
 .w-box {
-  background-color: #02AAFF;
-  background-color: rgba(2, 175, 255, 0.9);
+  background-color: #EC62A9;
+  background-color: rgba(255, 100, 180, 0.9);
   padding-top: 2em;
   padding-bottom: 2em;
   border-radius: 2em;
@@ -57,7 +57,7 @@ section {
 
 h1 {
   font-family: 'Luckiest Guy', cursive;
-  color: #FFCC00;
+  color: #FFFFFF;
   padding-bottom: 1em;  
 }
 
@@ -67,6 +67,48 @@ h1 {
 
   display: flex;
   align-items: center;
+}
+
+.arvontahidden {
+  visibility: hidden;
+}
+
+.arvontahidden:not(:checked) + .yhteystiedot {
+  -o-transition: all 0.25s ease;
+  -moz-transition: all 0.25s ease;
+  -webkit-transition: all 0.25s ease;
+  transition: all 0.25s ease;
+  opacity: 0;
+  font-size: 0;
+  margin: 0;
+  padding: 0;
+  line-height: 0;
+  overflow: hidden;
+}
+
+.arvontahidden:not(:checked) + .yhteystiedot > div, .arvontahidden:not(:checked) + .yhteystiedot > h1  {
+  -o-transition: all 0.25s ease;
+  -moz-transition: all 0.25s ease;
+  -webkit-transition: all 0.25s ease;
+  transition: all 0.25s ease;
+  opacity: 0;
+  font-size: 0;
+  margin: 0;
+  padding: 0;
+  line-height: 0;
+  overflow: hidden;
+}
+
+.arvontahidden:checked + .yhteystiedot {
+  -o-transition: all 0.25s ease;
+  -moz-transition: all 0.25s ease;
+  -webkit-transition: all 0.25s ease;
+  transition: all 0.25s ease;
+  opacity: 100;
+}
+
+.arvontahidden:checked + .yhteystiedot > div, .arvontahidden:checked + .yhteystiedot > h1 {
+  opacity: 100;
 }
 
 input[type=range] {
