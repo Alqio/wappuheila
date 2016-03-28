@@ -27,12 +27,13 @@ section {
   transition: height 0.5s; /* workaround for view jumping when the urlbar appears on mobile */
 }
 
-.w-box {
+.w-box, .popup {
   background-color: #EC62A9;
   background-color: rgba(255, 100, 180, 0.9);
   padding-top: 2em;
   padding-bottom: 2em;
   border-radius: 2em;
+  z-index: 2;
 }
 
 .question {
@@ -109,6 +110,18 @@ h1 {
 
 .arvontahidden:checked + .yhteystiedot > div, .arvontahidden:checked + .yhteystiedot > h1 {
   opacity: 100;
+}
+
+.popup {
+  z-index: 5;
+}
+
+.match-pic {
+  border: 1px solid #000;
+}
+
+.quote {
+  font-style: italic;
 }
 
 input[type=range] {

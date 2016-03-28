@@ -6,6 +6,9 @@
     <body ng-app="wappuheila" ng-controller="MainController as main">
       <div class="container-fluid">
         <div class="background">&nbsp;</div>
+        <section class="vertical-center" ng-show="main.popup || main.debug">
+          <div class="popup col-xs-12 col-md-10 col-md-offset-1 col-lg-6 col-lg-offset-3" id="popup"><%- include('../partials/'+lang.str+'/match.ejs') %></div>
+        </section>
         <form name="answers" ng-submit="main.postData()">
           <section class="vertical-center">
             <div class="w-box col-xs-12 col-md-8 col-md-offset-2 col-lg-6 col-lg-offset-3">
@@ -21,6 +24,7 @@
               </div>
               <label class="check" for="arvonta"><input type="checkbox" id="arvonta" name="arvonta" value="1" ng-model="main.registration.arvonta"/> Osallistun arvontaan!</label>
               <input type="submit" name="ok" value="Matchaa mut!"/>
+              <input type="submit" name="popup" value="Debug!" ng-click="main.debug=!main.debug"/>
             </div>
           </section>
         </form>

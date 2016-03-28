@@ -6,18 +6,22 @@ angular.module('wappuheila', [])
 
     this.registration = {};
     var self = this;
+    this.debug = false;
+    self.registration.results = {'name': 'Joonas Ulmanen', 'success': '87'};
 
     this.postData = function(){
-        console.log("Trying to sign up\n");
-        self.registration.admin = true;
+      console.log("Trying to sign up\n");
         
-        $http.post("/registration", self.registration)
-            .then(function(response){
-            }, function(response,err){
-                console.log("error\n");
-                self.registrationStatus = true;
-                self.registrationMessage = "VIRHE: " + response.data.msg;
-                console.log(self.registrationMessage);
-            }); 
+      $http.post("/registration", self.registration)
+        .then(function(response){
+          console.log(response);
+          self.popup = true;
+          self.registration.results = {'name': 'Joonas Ulmanen', 'success': '87'};
+        }, function(response,err){
+          console.log("error\n");
+          self.registrationStatus = true;
+          self.registrationMessage = "VIRHE: " + response.data.msg;
+          console.log(self.registrationMessage);
+        }); 
     };
 });
