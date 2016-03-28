@@ -1,0 +1,35 @@
+<h1>Täytä, jos haluat heilaksi</h1>
+
+<div class="row question">
+  <div class="col-xs-12 col-md-6 col-lg-6">
+    <label class="profilequote" for="profilequote">
+      Itsestäsi kertova lausahdus!
+    </label>
+  </div>
+  <div class="col-xs-12 col-md-6 col-lg-6">
+    <textarea type="text" name="profilequote" id="profilequote" ng-model="main.registration.profilequote"></textarea>
+  </div>
+</div>
+<div class="row question">
+  <!--
+  <label class="check" for="heilaksi">
+    <input type="checkbox" id="heilaksi" name="heilaksi" value="1" ng-model="main.registration.heilaksi"/>
+    Haluan heilaksi!
+  </label>
+  <p>Klikkaa, jos haluat, että sinut voidaan matchata palvelussa.</p>-->
+  
+  <div class="col-xs-12 col-md-6 col-lg-6">
+    <label class="img" for="profilepic">
+      Profiilikuvan URL:
+    </label>
+  </div>
+  <div class="col-xs-12 col-md-6 col-lg-6">
+    <input type="url" name="profilepic" id="profilepic" ng-model="main.registration.profilepic"/>
+  </div>
+  <p class="info">Varmista, että profiilikuva näkyy alla!</p>
+</div>
+<div class="row question">
+  <div class="col-xs-12 col-md-6 col-md-offset-3 col-lg-8 col-lg-offset-2">
+    <img class="col-xs-12 col-md-12 col-lg-12" ng-src="{{main.registration.profilepic}}" alt="none" title="Profiilikuva">
+  </div>
+</div>

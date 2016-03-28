@@ -17,7 +17,7 @@
           <% } %>
       <% } %>
       <% if(lang.fields[key]["type"] === "text"){ %>
-        <textarea class="col-xs-12 col-lg-12" name="<%= key %>" ng-model="main.registration.<%= key %>" rows="1" cols="24" draggable="false"></textarea>
+        <input type="text" name="<%= key %>" ng-model="main.registration.<%= key %>" required></textarea>
       <% } %>
     </div>
   </div>

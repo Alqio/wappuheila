@@ -7,15 +7,15 @@
     <div class="col-xs-12 col-md-6 col-lg-6">
       <% if(lang.signup[key]["type"] === "scale"){ %>
         <div class="col-xs-8 col-lg-10">
-          <input name="<%= key %>" type="range" min="<%= lang.signup[key]['min']%>" max="<%= lang.signup[key]['max']%>" value="<%= Math.floor(lang.signup[key]['max'] / 2) %>" ng-model="main.registration.<%= key %>" oninput="this.form.<%= key %>text.value=this.value"/>
+          <input name="<%= key %>" type="range" min="<%= lang.signup[key]['min']%>" max="<%= lang.signup[key]['max']%>" value="<%= Math.floor(lang.signup[key]['max'] / 2) %>" ng-model="main.registration.<%= key %>" oninput="this.form.<%= key %>text.value=this.value" ng-required="main.registration.arvonta"/>
         </div>
         <input class="col-xs-4 col-lg-2" name="<%= key %>text" type="text" value="<%= Math.floor(lang.signup[key]['max'] / 2)%>" oninput="this.form.<%= key %>.value=this.value"/>
       <% } %>
       <% if(lang.signup[key]["type"] === "text"){ %>
-        <textarea class="col-xs-12 col-lg-12" name="<%= key %>" ng-model="main.registration.<%= key %>" rows="1" cols="24" draggable="false"></textarea>
+        <input type="text" class="col-xs-12 col-lg-12" name="<%= key %>" ng-model="main.registration.<%= key %>" ng-required="main.registration.arvonta"/>
       <% } %>
       <% if(lang.signup[key]["type"] === "select"){ %>
-        <select name="<%= key %>" ng-model="main.registration.<%= key %>">
+        <select name="<%= key %>" ng-model="main.registration.<%= key %>" ng-required="main.registration.arvonta">
           <% for (var option in lang.signup[key]['options']) {%>
             <option value="<%= lang.signup[key]['options'][option]%>"><%=lang.signup[key]['options'][option] %></option>
           <% } %>
@@ -24,9 +24,3 @@
     </div>
   </div>
 <% } %>
-<div class="row question">
-  <label class="check" for="heilaksi">
-    <input type="checkbox" id="heilaksi" name="heilaksi" value="1" ng-model="main.registration.heilaksi"/>
-    Haluan heilaksi!
-  </label>
-</div>

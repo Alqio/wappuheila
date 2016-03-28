@@ -56,6 +56,11 @@ section {
   padding: 0;
 }
 
+.info {
+  font-style: italic;
+  color: #4C4C4C;
+}
+
 h1 {
   font-family: 'Luckiest Guy', cursive;
   color: #FFFFFF;

@@ -21,10 +21,11 @@
               <input type="checkbox" id="arvontahide" class="arvontahidden" name="arvonta" value="1" ng-model="main.registration.arvonta"/>
               <div class="yhteystiedot">
                 <%- include('../partials/'+lang.str+'/signup.ejs') %>
+                <%- include('../partials/'+lang.str+'/newheila.ejs') %>
               </div>
               <label class="check" for="arvonta"><input type="checkbox" id="arvonta" name="arvonta" value="1" ng-model="main.registration.arvonta"/> Osallistun arvontaan!</label>
               <input type="submit" name="ok" value="Matchaa mut!"/>
-              <input type="submit" name="popup" value="Debug!" ng-click="main.debug=!main.debug"/>
+              <a name="debug" value="Debug!" ng-click="main.debug=!main.debug">Debug!</a>
             </div>
           </section>
         </form>
