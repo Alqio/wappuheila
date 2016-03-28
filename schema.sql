@@ -6,11 +6,11 @@ create table associations (
 
 create table registrations (
 	created timestamp default now() not null primary key,
-	firstname text not null,
-	lastname text not null,
+	name text not null,
 	email text not null unique,
-	freshman_year int not null,
-	answer serial references answers(id),
+	profilequote text,
+	profilepic text,
+	answer_id serial references answers(id),
 	association text references associations(name)
 );
 

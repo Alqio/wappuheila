@@ -1,3 +1,5 @@
+'use strict';
+
 var express = require('express');
 var pg = require("pg");
 var bodyParser = require('body-parser');
@@ -13,8 +15,8 @@ var matching = require("./matching");
 query.connectionParameters = process.env.DATABASE_URL;
 app.set('port', (process.env.PORT || 5000));
 
-app.use(bodyParser.json())
-app.use(bodyParser.urlencoded({ extended: false }))
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: false }));
 app.use(express.static(__dirname + '/public'));
 app.use(cors());
 
@@ -29,30 +31,39 @@ app.get('/', function(req, res) {
   res.redirect('/fi');
 });
 
-app.get('/fi', function(request, response) {
+app.get('/fi', function(req, res) {
   var lang = JSON.parse(fs.readFileSync('data/lang_fi.json', 'utf8'));
   var t1 = Date.parse("2016-05-01T00:00+02:00");
   var t2 = Date.now();
   var dif = t1 - t2;
   var timeUntil = dif/1000; //milliseconds away
-  response.render('pages/index', {lang: lang, timeUntil: timeUntil});
+  res.render('pages/index', {lang: lang, timeUntil: timeUntil});
 });
 
-app.get('/en', function(request, response) {
+app.get('/en', function(req, res) {
   var lang = JSON.parse(fs.readFileSync('data/lang_en.json', 'utf8'));
   var t1 = Date.parse("2015-10-11T16:00+03:00");
   var t2 = Date.now();
   var dif = t1 - t2;
   var timeUntil = dif/1000; //milliseconds away
-  response.render('pages/index', {lang: lang, timeUntil: timeUntil});
+  res.render('pages/index', {lang: lang, timeUntil: timeUntil});
 });
 
 app.post("/registration", jsonParser, function(req, res) {
-  data = req.body;
-  console.log(data['admin']);
-  if(data['admin']){
+  var data = req.body;
+  if(data.admin){
     return matching.saveResults(data, res);
   } else {
-    return matching.compareResults(data, res);
+    when(
+        matching.compareResults(data, res)
+      ).then(
+        function(match){
+          res.status(200).send(JSON.stringify({'match': match}));
+        },
+        function(err){
+          console.log(err);
+          res.status(err[0]).send(JSON.stringify({'msg': err[1]}));
+        }
+      );
   }
 });
