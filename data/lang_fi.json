@@ -33,8 +33,8 @@
   "toteemi": {"type": "text", "label": "Mikä on toteemieläimesi?"}
 },
 "signup": {
-  "nimi": {"type": "text", "label": "Nimesi?"},
+  "name": {"type": "text", "label": "Nimesi?"},
   "email": {"type": "text", "label": "Sähköpostiosoitteesi?"},
-  "ruoka": {"type": "text", "label": "Ruoka-aineallergiat?"},
-  "kilta": {"type": "select", "options": ["AS", "Inkubio", "MK", "TiK", "FK", "SIK", "AK", "Athene", "KK", "KIK", "PJK", "IK", "Prodeko", "VK", "TF", "PT", "KY", "ARTS", "Muu/Other"], "label": "Kilta/Yhdistys/Osakunta:"}}
+  "allergies": {"type": "text", "label": "Ruoka-aineallergiat?"},
+  "association": {"type": "select", "options": ["AS", "Inkubio", "MK", "TiK", "FK", "SIK", "AK", "Athene", "KK", "KIK", "PJK", "IK", "Prodeko", "VK", "TF", "PT", "KY", "ARTS", "Muu/Other"], "label": "Kilta/Yhdistys/Osakunta:"}}
 }

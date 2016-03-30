@@ -19,32 +19,62 @@ for(var field_name in answers_meta.fields) {
 }
 
 q_pre = q_pre.substring(0, q_pre.length-2) + ") ";
-q_post = q_post.substring(0, q_post.length-2) + ");";
+q_post = q_post.substring(0, q_post.length-2) + ") RETURNING id;";
 
 var q_str = q_pre+q_post;
 
-exports.saveResults = function(req, res){
+function saveRegistration(req, answer_id) {
+  var deferred = when.defer();
+  query("INSERT INTO registrations (name, email, allergies, answer_id, association, profilequote, profilepic) VALUES ($1, $2, $3, $4, $5, $6, $7)",
+    [req.name, req.email, req.allergies, answer_id, req.association, req.profilequote, req.profilepic])
+    .then(
+      function(rows, res){
+        console.log("Saved a new registration, name: " + req.name);
+        deferred.resolve(true);
+      },
+      function(err){
+        console.log(err);
+        deferred.reject([500, err]);
+      });
+  return deferred.promise;
+}
+
+function saveAnswer(req, points){
   var deferred = when.defer();
   var str = q_str;
   var q_arr = [];
   for(var field_name in answers_meta.fields){
     // check that the field is found in the input
-    if(!req[field_name]){
+    var field = !isNaN(points[field_name]) ? points[field_name] : req[field_name];
+    if(field === undefined){
       console.log("Invalid data! No " + field_name + " found!");
       return false;
     }
-    q_arr.push(req[field_name]);
+    q_arr.push(field);
   }
-  query(q_str, q_arr).
-    then(
+  query(q_str, q_arr)
+    .then(
       function(rows, result){
-        console.log("success!");
+        var answer_id = rows[0][0].id;
+        console.log("Saved a new answer with id " + answer_id);
+        if(req.arvonta){
+          when(saveRegistration(req, answer_id))
+            .then(
+              function(){
+                deferred.resolve(answer_id);
+              },
+              function(err){
+                deferred.reject(err);
+              }
+            );
+        }
       },
       function(err){
         console.log(err);
+        deferred.resolve([500, "Internal server error"]);
       });
   return deferred.promise;
-};
+}
 
 function collectPoints(req) {
   var points = {};
@@ -54,11 +84,13 @@ function collectPoints(req) {
       var field_meta = answers_meta.fields[field_name];
       if(field_meta.type === 'scale'){
         scale = answers_meta['scaled-max'] / field_meta.max;
-        points[field_name] = req[field_name] * scale;
+        points[field_name] = Math.round(Number(req[field_name]) * scale);
       } else if(field_meta.type === 'choice') {
-        points[field_name] = Number(req[field_name]);
+        scale = answers_meta['scaled-max'] / field_meta.choices.length;
+        points[field_name] = Math.round(Number(req[field_name]) * scale);
       } else {
-        console.log(field_name + ": " + req[field_name]);
+        console.log("Text field " + field_name + ": " + req[field_name]);
+        // text fields
       }
     } else {
       return false;
@@ -70,7 +102,7 @@ function collectPoints(req) {
 function fetchMatchableAnswers() {
   var deferred = when.defer();
   var registrations = {};
-  query("SELECT * FROM answers JOIN registrations ON answers.id = registrations.answer_id")
+  query("SELECT * FROM answers JOIN registrations ON answers.id = registrations.answer_id AND registrations.profilequote IS NOT null AND registrations.profilepic IS NOT null")
     .then(
       function(rows, res){
         registrations = rows[0];
@@ -92,7 +124,7 @@ function calculateClosestMatch(regs, points){
     var reg = regs[i];
     var cur_points = 0;
     for(var field_name in answers_meta.fields){
-      if(points[field_name]){
+      if(!isNaN(points[field_name])){
         cur_points += Math.abs(reg[field_name] - points[field_name]);
         reg[field_name] = undefined;
       }
@@ -112,6 +144,7 @@ function returnClosestMatch(points) {
     .then(
       function(regs){
         var match = calculateClosestMatch(regs, points);
+        console.log(match);
         deferred.resolve(match);
       },
       function(err){
@@ -131,6 +164,9 @@ exports.compareResults = function(req, res){
     deferred.reject([400, "Invalid input!"]);
     return deferred.promise;
   }
+  
+  // save answer
+  saveAnswer(req, points);
   
   when(returnClosestMatch(points))
     .then(

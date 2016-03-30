@@ -121,7 +121,9 @@ h1 {
 }
 
 .match-pic {
-  border: 1px solid #000;
+  max-height: 17em;
+  background-size: cover;
+  max-width: 17em;
 }
 
 .quote {

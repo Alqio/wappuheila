@@ -4,7 +4,8 @@
   "description": "Wappuheila thing",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js"
+    "start": "node index.js",
+    "resetdb": "node resetdb.js"
   },
   "dependencies": {
     "body-parser": "^1.14.1",
