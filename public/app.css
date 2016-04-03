@@ -5,16 +5,20 @@ html, body {
   padding: 0;
   text-align: center;
   color: #EEEEEE;
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'Helvetica', sans-serif;
   font-weight: bolder;
   font-size: 1.0em;
-  z-index: 2;
+  z-index: 0;
 }
 
 section {
   min-height: 100vh;
   margin-bottom: 5em;
   transition: min-height 0.5s; /* workaround for view jumping when the urlbar appears on mobile */
+}
+
+div {
+  transition: min-height 0.5s;
 }
 
 .background {
@@ -118,6 +122,27 @@ h1 {
 
 .popup {
   z-index: 5;
+  position: absolute;
+  top: 50%;
+  transform: translate(0, -50%);
+}
+
+.popup-bg {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  margin: 0;
+  z-index: 5;
+  background-color: #111;
+  background-color: rgba(0,0,0,0.4);
+}
+
+.close {
+  position: absolute;
+  top: 2em;
+  right: 2em;
+  color: #fff;
+  opacity: 0.9;
 }
 
 .match-pic {

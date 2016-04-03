@@ -6,9 +6,9 @@
     <body ng-app="wappuheila" ng-controller="MainController as main">
       <div class="container-fluid">
         <div class="background">&nbsp;</div>
-        <section class="vertical-center" ng-show="main.popup || main.debug">
+        <div class="popup-bg" ng-show="main.popup || main.debug">
           <div class="popup col-xs-12 col-md-10 col-md-offset-1 col-lg-6 col-lg-offset-3" id="popup"><%- include('../partials/'+lang.str+'/match.ejs') %></div>
-        </section>
+        </div>
         <form name="answers" ng-submit="main.postData()">
           <section class="vertical-center">
             <div class="w-box col-xs-12 col-md-8 col-md-offset-2 col-lg-6 col-lg-offset-3">

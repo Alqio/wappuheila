@@ -6,7 +6,6 @@ angular.module('wappuheila', [])
 
     this.registration = {};
     var self = this;
-    this.debug = false;
     self.registration.results = {'name': 'Joonas Ulmanen', 'success': '87'};
 
     this.postData = function(){
