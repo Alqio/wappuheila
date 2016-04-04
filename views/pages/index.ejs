@@ -25,7 +25,7 @@
                   <%- include('../partials/'+lang.str+'/newheila.ejs') %>
                 <%} %>
               </div>
-              
+              <div class="error" ng-show="main.error">Virhe! {{main.error}}</div>
               <label class="check" for="arvonta"><input type="checkbox" id="arvonta" name="arvonta" value="1" ng-model="main.registration.arvonta"/> Osallistun arvontaan!</label>
               <input type="submit" name="ok" value="Matchaa mut!"/>
             </div>

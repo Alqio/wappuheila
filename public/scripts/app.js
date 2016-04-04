@@ -18,11 +18,10 @@ angular.module('wappuheila', [])
           self.registration = {};
           self.popup = true;
           self.registration.match = response.data.match;
+          self.error = undefined;
         }, function(response,err){
-          console.log("error\n");
-          self.registrationStatus = true;
-          self.registrationMessage = "VIRHE: " + response.data.msg;
-          console.log(self.registrationMessage);
+          console.log("error: " +err);
+          self.error = response.data.msg;
         }); 
     };
 });
