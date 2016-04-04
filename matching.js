@@ -61,7 +61,8 @@ function saveAnswer(req, points){
       function(rows, result){
         var answer_id = rows[0][0].id;
         console.log("Saved a new answer with id " + answer_id);
-        if(req.arvonta){
+        if(false) {
+        //if(req.arvonta){
           when(saveRegistration(req, answer_id))
             .then(
               function(){
