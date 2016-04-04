@@ -29,10 +29,14 @@ function saveRegistration(req, answer_id) {
     [req.name, req.email, req.allergies, answer_id, req.association, req.profilequote, req.profilepic])
     .then(
       function(rows, res){
+        if(req.profilequote) { 
+          console.log("New heila!"); 
+        }
         console.log("Saved a new registration, name: " + req.name);
         deferred.resolve(true);
       },
       function(err){
+        console.log("Error at saveRegistration.");
         console.log(err);
         deferred.reject([500, err]);
       });
@@ -93,6 +97,7 @@ function collectPoints(req) {
         // text fields
       }
     } else {
+      console.log("Field " + field_name + " missing!");
       return false;
     }
   }
@@ -144,7 +149,8 @@ function returnClosestMatch(points) {
     .then(
       function(regs){
         var match = calculateClosestMatch(regs, points);
-        console.log(match);
+        console.log("Found closest match:");
+        console.log(regs);
         deferred.resolve(match);
       },
       function(err){

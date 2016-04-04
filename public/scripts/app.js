@@ -7,7 +7,8 @@ angular.module('wappuheila', [])
     this.registration = {};
     var self = this;
     
-    self.registration = {};
+    // prefill scale values so they can be left untouched when matching
+    self.registration = {"wappufiilis": "0.5", "wappu_lasts": "15", "lempinumero": "4", "spontaani": "5"};
 
     this.postData = function(){
       console.log("Trying to sign up\n");

@@ -21,7 +21,9 @@
               <input type="checkbox" id="arvontahide" class="arvontahidden" name="arvonta" value="1" ng-model="main.registration.arvonta"/>
               <div class="yhteystiedot">
                 <%- include('../partials/'+lang.str+'/signup.ejs') %>
-                <%- include('../partials/'+lang.str+'/newheila.ejs') %>
+                <% if(false) { %>
+                  <%- include('../partials/'+lang.str+'/newheila.ejs') %>
+                <%} %>
               </div>
               
               <label class="check" for="arvonta"><input type="checkbox" id="arvonta" name="arvonta" value="1" ng-model="main.registration.arvonta"/> Osallistun arvontaan!</label>
