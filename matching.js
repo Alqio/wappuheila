@@ -150,7 +150,7 @@ function returnClosestMatch(points) {
       function(regs){
         var match = calculateClosestMatch(regs, points);
         console.log("Found closest match:");
-        console.log(regs);
+        console.log(match);
         deferred.resolve(match);
       },
       function(err){
