@@ -25,8 +25,9 @@ var q_str = q_pre+q_post;
 
 function saveRegistration(req, answer_id) {
   var deferred = when.defer();
-  query("INSERT INTO registrations (name, email, allergies, answer_id, association, profilequote, profilepic) VALUES ($1, $2, $3, $4, $5, $6, $7)",
-    [req.name, req.email, req.allergies, answer_id, req.association, req.profilequote, req.profilepic])
+  //query("INSERT INTO registrations (name, email, allergies, answer_id, association, profilequote, profilepic) VALUES ($1, $2, $3, $4, $5, $6, $7)",
+  query("INSERT INTO registrations (name, email, allergies, answer_id, association) VALUES ($1, $2, $3, $4, $5)",
+    [req.name, req.email, req.allergies, answer_id, req.association])
     .then(
       function(rows, res){
         if(req.profilequote) { 
@@ -61,8 +62,7 @@ function saveAnswer(req, points){
       function(rows, result){
         var answer_id = rows[0][0].id;
         console.log("Saved a new answer with id " + answer_id);
-        if(false) {
-        //if(req.arvonta){
+        if(req.arvonta){
           when(saveRegistration(req, answer_id))
             .then(
               function(){
@@ -105,6 +105,18 @@ function collectPoints(req) {
   return points;
 }
 
+var allowed_fields = ['profilepic', 'profilequote', 'name'];
+
+function stripInformation(match) {
+  var info = {};
+  for(var i=0; i < allowed_fields.length; i+=1){
+    if(match[allowed_fields[i]]){
+      info[allowed_fields[i]] = match[allowed_fields[i]];
+    }
+  }
+  return info;
+}
+
 function fetchMatchableAnswers() {
   var deferred = when.defer();
   var registrations = {};
@@ -140,7 +152,7 @@ function calculateClosestMatch(regs, points){
       match = reg;
     }
   }
-  return match;
+  return stripInformation(match);
 }
 
 function returnClosestMatch(points) {
@@ -150,8 +162,7 @@ function returnClosestMatch(points) {
     .then(
       function(regs){
         var match = calculateClosestMatch(regs, points);
-        console.log("Found closest match:");
-        console.log(match);
+        console.log("Found closest match: " + match.name);
         deferred.resolve(match);
       },
       function(err){
