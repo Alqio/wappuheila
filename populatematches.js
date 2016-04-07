@@ -41,7 +41,6 @@ when(fetchAnswers())
       var heilat = res[0]; var muut = res[1];
       for(var i=0; i<muut.length; i+=1){
         var match = matching.calculateClosestMatch(heilat, muut[i]);
-        console.log(match);
         console.log("Pari löydetty: " + match.name + " <3 " + muut[i].name);
       }
     },
