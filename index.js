@@ -40,15 +40,6 @@ app.get('/fi', function(req, res) {
   res.render('pages/index', {lang: lang, timeUntil: timeUntil});
 });
 
-app.get('/en', function(req, res) {
-  var lang = JSON.parse(fs.readFileSync('data/lang_en.json', 'utf8'));
-  var t1 = Date.parse("2015-10-11T16:00+03:00");
-  var t2 = Date.now();
-  var dif = t1 - t2;
-  var timeUntil = dif/1000; //milliseconds away
-  res.render('pages/index', {lang: lang, timeUntil: timeUntil});
-});
-
 app.post("/registration", jsonParser, function(req, res) {
   var data = req.body;
   if(data.admin){

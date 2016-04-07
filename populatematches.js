@@ -23,7 +23,6 @@ function separateAnswers(answers) {
   var heilat = [];
   var muut = [];
   for(var i=0;i < answers.length;i += 1){
-    console.log(i, answers[i]);
     var answer = answers[i];
     if(answer.profilepic){
       heilat.push(answer);
