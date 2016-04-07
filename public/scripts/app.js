@@ -15,7 +15,7 @@ angular.module('wappuheila', [])
         
       $http.post("/registration", self.registration)
         .then(function(response){
-          self.registration = {};
+          self.registration = {"wappufiilis": "0.5", "wappu_lasts": "15", "lempinumero": "4", "spontaani": "5"}; // THIS MUST BE THE SAME WITH ABOVE
           self.popup = true;
           self.registration.match = response.data.match;
           self.error = undefined;

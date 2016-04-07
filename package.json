@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
-    "resetdb": "node resetdb.js"
+    "resetdb": "node resetdb.js",
+    "heilat": "node populatematches.js"
   },
   "dependencies": {
     "body-parser": "^1.14.1",

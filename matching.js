@@ -135,7 +135,7 @@ function fetchMatchableAnswers() {
 }
 
 // there's a double loop here, could optimize by moving this to point calculating phase
-function calculateClosestMatch(regs, points){
+exports.calculateClosestMatch = function(regs, points){
   var min_points = 99999;
   var match;
   for(var i=0; i<regs.length; i+=1){
@@ -144,7 +144,6 @@ function calculateClosestMatch(regs, points){
     for(var field_name in answers_meta.fields){
       if(!isNaN(points[field_name])){
         cur_points += Math.abs(reg[field_name] - points[field_name]);
-        reg[field_name] = undefined;
       }
     }
     if(cur_points < min_points){
@@ -152,8 +151,8 @@ function calculateClosestMatch(regs, points){
       match = reg;
     }
   }
-  return stripInformation(match);
-}
+  return match;
+};
 
 function returnClosestMatch(points) {
   var deferred = when.defer();
@@ -161,7 +160,8 @@ function returnClosestMatch(points) {
   when(fetchMatchableAnswers())
     .then(
       function(regs){
-        var match = calculateClosestMatch(regs, points);
+        var match = exports.calculateClosestMatch(regs, points);
+        match = stripInformation(match);
         console.log("Found closest match: " + match.name);
         deferred.resolve(match);
       },
@@ -175,6 +175,9 @@ function returnClosestMatch(points) {
 
 // Compare results by absolute difference in answers
 exports.compareResults = function(req, res){
+  console.log("----");
+  console.log("Trying to match!");
+  
   var deferred = when.defer();
   var match = {};
   var points = collectPoints(req);

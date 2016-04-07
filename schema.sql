@@ -48,6 +48,12 @@ CREATE TABLE registrations (
     profilepic text
 );
 
+create table matches (
+    id serial NOT NULL PRIMARY KEY, 
+    answer_id integer references answers(id) NOT NULL, 
+    match text references registrations(email) NOT NULL
+);
+
 insert into associations values ('AS'), ('Inkubio'), ('MK'), ('TiK'), ('FK'), ('SIK'), ('AK'), ('Athene'), ('KK'), ('KIK'), ('PJK'), ('IK'), ('Prodeko'), ('VK'), ('TF'), ('PT'), ('KY'), ('ARTS'), ('Muu/Other');
 
 /* test data */
