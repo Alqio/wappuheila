@@ -40,6 +40,11 @@ app.get('/fi', function(req, res) {
   res.render('pages/index', {lang: lang, timeUntil: timeUntil});
 });
 
+app.get('/fetchmatches', function(req, res) {
+  var populate = require('./populatematches');
+  populate.fetchMatches();
+});
+
 app.post("/registration", jsonParser, function(req, res) {
   var data = req.body;
   if(data.admin){

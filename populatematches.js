@@ -33,17 +33,41 @@ function separateAnswers(answers) {
   return [heilat, muut];
 }
 
+exports.fetchMatches = function() {
+  when(fetchAnswers())
+    .then(
+      function(answers){
+        var res = separateAnswers(answers);
+        var heilat = res[0]; var muut = res[1];
+        var matches = []
+        for(var i=0; i<muut.length; i+=1){
+          var match = matching.calculateClosestMatch(heilat, muut[i]);
+          matches += {'heila': match.name, 'muu': muut[i].name}
+          console.log("Pari löydetty: " + match.name + " <3 " + muut[i].name);
+        }
+        return matches;
+      },
+      function(err){
+        console.log(err);
+      }
+    );
+}
+/*
 when(fetchAnswers())
   .then(
     function(answers){
       var res = separateAnswers(answers);
       var heilat = res[0]; var muut = res[1];
+      var matches = []
       for(var i=0; i<muut.length; i+=1){
         var match = matching.calculateClosestMatch(heilat, muut[i]);
+        matches += {'heila': match.name, 'muu': muut[i].name}
         console.log("Pari löydetty: " + match.name + " <3 " + muut[i].name);
       }
+      return matches;
     },
     function(err){
       console.log(err);
     }
   );
+*/
