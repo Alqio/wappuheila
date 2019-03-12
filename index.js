@@ -13,6 +13,8 @@ var fs = require("fs");
 var matching = require("./matching");
 
 query.connectionParameters = process.env.DATABASE_URL;
+console.log(process.env.DATABASE_URL);
+
 app.set('port', (process.env.PORT || 5000));
 
 app.use(bodyParser.json());
@@ -33,7 +35,7 @@ app.get('/', function(req, res) {
 
 app.get('/fi', function(req, res) {
   var lang = JSON.parse(fs.readFileSync('data/lang_fi.json', 'utf8'));
-  var t1 = Date.parse("2016-05-01T00:00+02:00");
+  var t1 = Date.parse("2019-05-01T00:00+02:00");
   var t2 = Date.now();
   var dif = t1 - t2;
   var timeUntil = dif/1000; //milliseconds away
