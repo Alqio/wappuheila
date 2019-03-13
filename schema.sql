@@ -3,7 +3,7 @@ CREATE TABLE answers (
     id serial NOT NULL PRIMARY KEY,
     created_at timestamp without time zone DEFAULT now() NOT NULL,
     wappufiilis integer NOT NULL,
-    wappufiilis_toinen NOT NULL,
+    wappufiilis_toinen text NOT NULL,
     first_thing text NOT NULL,
     wappu_lasts integer NOT NULL,
     spontaani integer NOT NULL,
@@ -32,7 +32,7 @@ CREATE TABLE answers (
     gt text NOT NULL,
     viimeksi text NOT NULL,
     toteemi text NOT NULL,
-    design_vai_bisnes NOT NULL
+    design_vai_bisnes text NOT NULL
 );
 
 create table associations (

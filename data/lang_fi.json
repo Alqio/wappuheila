@@ -3,7 +3,7 @@
 "scaled-max": 10,
 "fields": {
   "wappufiilis": {"type": "scale", "max": 1, "label": "Wappufiilis? (0-1)", "step": "0.1"},
-  "wappufiilis_toinen": {"type": "choice", "choices": ["SosseliSOS", "Rippistä", "Full blast"], "label": "WappeliWab?"},
+  "wappufiilis_toinen": {"type": "choice", "choices": ["SosseliSOS", "Rippistä", "Full blast"], "label": "WabediWabs?"},
   "first_thing": {"type": "text", "label": "Mikä asia tulee ensimmäiseksi mieleen Wapusta?"},
   "wappu_lasts": {"type": "scale", "max": 30, "label": "Kuinka monta yötä Wappusi kestää? (1-30)"},
   "spontaani": {"type": "scale", "max": 10, "label": "Kuinka spontaani olet? (1-10)"},
