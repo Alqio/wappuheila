@@ -42,8 +42,9 @@ exports.fetchMatches = function() {
         var matches = [];
         for(var i=0; i<muut.length; i+=1){
           var match = matching.calculateClosestMatch(heilat, muut[i]);
-          matches += {'heila': match.name, 'muu': muut[i].name}
+          matches += {'heila': match.name, 'muu': muut[i].name};
           console.log("Pari löydetty: " + match.name + " <3 " + muut[i].name);
+          console.log(muut[i]);
         }
         return matches;
       },
@@ -52,7 +53,7 @@ exports.fetchMatches = function() {
       }
     );
 }
-/*
+/*separateAnswers
 when(fetchAnswers())
   .then(
     function(answers){
