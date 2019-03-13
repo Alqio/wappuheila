@@ -24,12 +24,12 @@
   "tinder_kinder": {"type": "choice", "choices": ["Kinder-muna", "Tinder-muna"], "label": "Kinder- vai Tinder-muna?"},
   "ufot": {"type": "choice", "choices": ["Kyllä", "En", "Pimpelipom"], "label": "Uskotko ufoihin?"},
   "yhdyssanat": {"type": "choice", "choices": ["Linnun pönttö kraa kraa", "Palo hälytin pii paa", "Punainen auto vrum vrum"], "label": "Mitä mieltä olet yhdys sana virheistä?"},
+  "design_vai_bisnes": {"type": "choice", "choices": ["Tekniikka"], "label": "Design vai business?"},
   "got": {"type": "choice", "choices": ["Homer Simpson", "Chandler", "Joffrey kuolee (Spoiler alert)"], "label": "Kuka on lempihahmosi Game of Thronesissa?"},
   "lehtimyyja": {"type": "choice", "choices": ["Kyllä", "En", "Sit' on koettanut moni soittaja", "*Tuut tuut tuut*"], "label": "Oletko koskaan ostanut mitään puhelinmyyjältä"},
   "gt": {"type": "choice", "choices": ["Gin Tonicin", "Gini Tonicin", "Ginitonicin"], "label": "Tahtoisin…"},
   "viimeksi": {"type": "choice", "choices": ["Tänään", "Huomenna"], "label": "Milloin viimeksi tymästi"},
-  "toteemi": {"type": "text", "label": "Mikä on toteemieläimesi?"},
-  "deisgn_vai_bisnes": {"type": "choice", "choices": ["Tekniikka"], "label": "Design vai business?"}
+  "toteemi": {"type": "text", "label": "Mikä on toteemieläimesi?"}
 },
 "signup": {
   "name": {"type": "text", "label": "Nimesi?"},

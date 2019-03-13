@@ -24,6 +24,7 @@ CREATE TABLE answers (
 		tinder_kinder text NOT NULL,
     ufot text NOT NULL,
     yhdyssanat text NOT NULL,
+    design_vai_bisnes text NOT NULL,
     got text NOT NULL,
     salkkarit text NOT NULL,
     amnesia text NOT NULL,
@@ -31,8 +32,7 @@ CREATE TABLE answers (
     lehtimyyja text NOT NULL,
     gt text NOT NULL,
     viimeksi text NOT NULL,
-    toteemi text NOT NULL,
-    design_vai_bisnes text NOT NULL
+    toteemi text NOT NULL
 );
 
 create table associations (
