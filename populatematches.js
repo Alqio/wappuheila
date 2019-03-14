@@ -67,6 +67,10 @@ exports.fetchHeilas = function () {
                     console.log("Heila: " + heilat[j].name + " Email: " + heilat[j].email);
                 }
 
+                if (heilat.length === 0) {
+                    console.log("No heilas registered yet");
+                }
+
                 return heilat;
 
             },
