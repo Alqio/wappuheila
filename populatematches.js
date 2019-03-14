@@ -52,7 +52,30 @@ exports.fetchMatches = function () {
                 console.log(err);
             }
         );
-}
+};
+
+exports.fetchHeilas = function () {
+    when(fetchAnswers())
+        .then(
+            function (answers) {
+                var res = separateAnswers(answers);
+                var heilat = res[0];
+                var muut = res[1];
+                var matches = [];
+
+                for (var j = 0; j < heilat.length; j += 1) {
+                    console.log("Heila: " + heilat[j].name + " Email: " + heilat[j].email);
+                }
+
+                return heilat;
+
+            },
+            function (err) {
+                console.log(err);
+            }
+        );
+};
+
 /*separateAnswers
 when(fetchAnswers())
   .then(

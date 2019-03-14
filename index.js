@@ -47,6 +47,11 @@ app.get('/fetchmatches', function(req, res) {
   populate.fetchMatches();
 });
 
+app.get('/fetchheilas', function(req, res) {
+  var populate = require('./populatematches');
+  populate.fetchHeilas();
+});
+
 app.post("/registration", jsonParser, function(req, res) {
   var data = req.body;
   if(data.admin){
