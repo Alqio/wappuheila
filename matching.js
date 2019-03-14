@@ -25,10 +25,10 @@ var q_str = q_pre + q_post;
 
 function saveRegistration(req, answer_id) {
     var deferred = when.defer();
-    query("INSERT INTO registrations (name, email, allergies, answer_id, association, profilequote, profilepic) VALUES ($1, $2, $3, $4, $5, $6, $7)",
-        [req.name, req.email, req.allergies, answer_id, req.association, req.profilequote, req.profilepic])
-    //query("INSERT INTO registrations (name, email, allergies, answer_id, association) VALUES ($1, $2, $3, $4, $5)",
-        //[req.name, req.email, req.allergies, answer_id, req.association])
+    //query("INSERT INTO registrations (name, email, allergies, answer_id, association, profilequote, profilepic) VALUES ($1, $2, $3, $4, $5, $6, $7)",
+        //[req.name, req.email, req.allergies, answer_id, req.association, req.profilequote, req.profilepic])
+    query("INSERT INTO registrations (name, email, allergies, answer_id, association) VALUES ($1, $2, $3, $4, $5)",
+        [req.name, req.email, req.allergies, answer_id, req.association])
         .then(
             function (rows, res) {
                 if (req.profilequote) {
